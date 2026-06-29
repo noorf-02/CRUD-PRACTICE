@@ -4,12 +4,19 @@ const dotenv = require('dotenv');
 dotenv.config();
 const mongoose = require('mongoose');
 const cors = require('cors');
+const Router = require('./VIEW/product')
 const connectDB = require('./DATABASE/dbconfig');
 const port = process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
 connectDB();  
+
+app.use('/', Router)
+
+app.all('/*path', (req,res)=>{
+    res.send('This Path Does Not Exist')
+})
 
 app.get('/', (req,res)=>{
     res.send(`this is the homepage running on ${port}`);

@@ -2,9 +2,10 @@
 // and we will use the routes from express
 
 const express = require('express');
-const router = express.router();
+const Router = express.Router();
+const { createProduct,  getProducts } = require('../CONTROLLER/product')
 
-router.post('/register', createProduct);
-router.get('/products', getProducts);
+Router.post('/register', createProduct);
+Router.get('/products', getProducts);
 
-module.exports = router; 
+module.exports = Router; 

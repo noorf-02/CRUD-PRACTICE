@@ -5,10 +5,10 @@ const { Schema } = mongoose;
 
 const productSchema = new Schema ({
     title: String,
-    Description: String,
+    description: String,
     image: String,
-    Category: String,
-    Price: Number,
+    category: String,
+    price: Number,
 });
 
 // after the schema is created we convert it to model so it can be exported 
